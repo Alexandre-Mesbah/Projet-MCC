@@ -1,11 +1,18 @@
 from pathlib import Path
 import sys
 
-sys.path.append(str(Path(__file__).resolve().parents[1]))
-from projet import *
+BASE = Path(__file__).resolve().parent
+sys.path.append(str(BASE.parent))
+
+from projet import lire_machine2
+
 
 def test_lecture_2():
-    machine = lire_machine2("test.txt")
-    print(machine)
+    code_machine = lire_machine2(BASE / "test.txt")
 
-test_lecture_2()
+    assert code_machine == "0|0|1|R|0|0|1|0|R|0|0|_|_|S|1"
+
+
+if __name__ == "__main__":
+    test_lecture_2()
+    print("Q7 ok")
