@@ -1,0 +1,12 @@
+name: test
+init: q0
+accept: qf
+
+q0,0
+q0,1,R
+
+q0,1
+q0,0,R
+
+q0,_
+qf,_,S
